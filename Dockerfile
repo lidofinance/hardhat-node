@@ -1,39 +1,37 @@
 # syntax=docker/dockerfile:1
+FROM ghcr.io/napi-rs/napi-rs/nodejs-rust:lts-debian-aarch64
 
-# Comments are provided throughout this file to help you get started.
-# If you need more help, visit the Dockerfile reference guide at
-# https://docs.docker.com/go/dockerfile-reference/
+WORKDIR /opt/build
 
-# Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
+RUN git clone --single-branch --branch fix-large-rpc-responses https://github.com/dputko/edr.git edr && \
+    git clone --single-branch --branch fix-large-rpc-responses https://github.com/dputko/hardhat.git hardhat
 
-ARG NODE_VERSION=lts
-ARG PNPM_VERSION=9.1.0
+ # libudev-dev is required by hardhat-ledger
+RUN apt install -y libudev-dev
 
-FROM node:${NODE_VERSION}-alpine
+# Build patched EDR and link as a global package
+WORKDIR /opt/build/edr/crates/edr_napi
+RUN pnpm install && pnpm build && npm link
 
-# Use production node environment by default.
-ENV NODE_ENV production
+# Build patched Hardhat and link as a global package
+WORKDIR /opt/build/hardhat
+RUN <<EOT bash
+    pnpm install
+    pushd ./node_modules/.pnpm/@nomicfoundation+edr@0.4.1
+    npm link @nomicfoundation/edr
+    popd
+    pnpm build
+    cd ./packages/hardhat-core
+    npm link
+EOT
 
-# Install pnpm.
-RUN --mount=type=cache,target=/root/.npm \
-    npm install -g pnpm@${PNPM_VERSION}
+# Create a new project and link the patched Hardhat
+WORKDIR /app
 
-WORKDIR /usr/src/app
-
-# Download dependencies as a separate step to take advantage of Docker's caching.
-# Leverage a cache mount to /root/.local/share/pnpm/store to speed up subsequent builds.
-# Leverage a bind mounts to package.json and pnpm-lock.yaml to avoid having to copy them into
-# into this layer.
-RUN --mount=type=bind,source=package.json,target=package.json \
-    --mount=type=bind,source=pnpm-lock.yaml,target=pnpm-lock.yaml \
-    --mount=type=cache,target=/root/.local/share/pnpm/store \
-    pnpm install --prod --frozen-lockfile
-
-# Copy the rest of the source files into the image.
 COPY . .
 
-# Expose the port that the application listens on.
+RUN npm link hardhat && pnpm install
+
 EXPOSE 8545
 
-# Run the application.
-CMD pnpm start
+ENTRYPOINT pnpm start
