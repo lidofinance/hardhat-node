@@ -33,4 +33,4 @@ docker run -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.11-scratc
 - create a PR
 - merge the PR
 - create a new tag with the version `git tag -a <version> -m "Hardhat version <version>"`
-- push the tag `git push --tags <version>`
+- push the tag `git push --tags`
