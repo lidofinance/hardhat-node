@@ -7,12 +7,12 @@
 # Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
 
 ARG NODE_VERSION=lts
-ARG PNPM_VERSION=9.1.0
+ARG PNPM_VERSION=9.11.0
 
 FROM node:${NODE_VERSION}-alpine
 
 # Use production node environment by default.
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 # Install pnpm.
 RUN --mount=type=cache,target=/root/.npm \
@@ -36,4 +36,4 @@ COPY . .
 EXPOSE 8545
 
 # Run the application.
-CMD pnpm start
+CMD ["pnpm", "start"]
