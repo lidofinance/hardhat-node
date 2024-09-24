@@ -11,11 +11,11 @@ To run the mainnet fork you have to set one of the following environment variabl
 ```bash
 docker run -e INFURA_TOKEN=your_token -p 8545:8545 -it --rm lidofinance/hardhat-node:latest
 ```
-    
+
 ```bash
 docker  run -e ALCHEMY_TOKEN=your_token -p 8545:8545 -it --rm lidofinance/hardhat-node:latest
 ```
-    
+
 ```bash 
 docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm lidofinance/hardhat-node:latest
 ```
