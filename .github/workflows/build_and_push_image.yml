@@ -25,10 +25,19 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push
+      - name: Build and push fork image
         uses: docker/build-push-action@v6.1.0
         with:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ghcr.io/lidofinance/hardhat-node:${{ github.ref_name }}
+
+      - name: Build and push scratch image
+        uses: docker/build-push-action@v6.1.0
+        with:
+          context: .
+          file: scratch.Dockerfile
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/lidofinance/hardhat-node:${{ github.ref_name }}-scratch
