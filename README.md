@@ -24,3 +24,13 @@ If you don't need to fork mainnet, and you only want to work with the scratch no
 ```bash
 docker run -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.11-scratch
 ```
+
+### Updating hardhat version
+
+- set the new version in package.json
+- run `pnpm install`
+- create new branch `feat/hardhat-<version>`
+- create a PR
+- merge the PR
+- create a new tag with the version `git tag -a <version> -m "Hardhat version <version>"`
+- push the tag `git push --tags <version>`
