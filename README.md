@@ -8,14 +8,19 @@ To run the mainnet fork you have to set one of the following environment variabl
 - `ETH_RPC_URL` to use a custom provider
 
 ### Examples
+With Infura
 ```bash
-docker run -e INFURA_TOKEN=your_token -p 8545:8545 -it --rm lidofinance/hardhat-node:latest
+docker run -e INFURA_TOKEN=your_token -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.11
 ```
-
+With Alchemy:
 ```bash
-docker  run -e ALCHEMY_TOKEN=your_token -p 8545:8545 -it --rm lidofinance/hardhat-node:latest
+docker  run -e ALCHEMY_TOKEN=your_token -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.11
 ```
-
+With custom provider:
 ```bash 
-docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm lidofinance/hardhat-node:latest
+docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.11
+```
+If you don't need to fork mainnet, and you only want to work with the scratch node:
+```bash
+docker run -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.11-scratch
 ```
