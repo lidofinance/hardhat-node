@@ -11,23 +11,23 @@ To run the mainnet fork you have to set one of the following environment variabl
 ### Examples
 With Infura
 ```bash
-docker run -e INFURA_TOKEN=your_token -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.19
+docker run -e INFURA_TOKEN=your_token -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.18.1
 ```
 With Alchemy:
 ```bash
-docker  run -e ALCHEMY_TOKEN=your_token -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.19
+docker  run -e ALCHEMY_TOKEN=your_token -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.18.1
 ```
 With custom provider:
 ```bash
-docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.19
+docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.18.1
 ```
 If you don't need to fork mainnet, and you only want to work with the `-scratch` node:
 ```bash
-docker run -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.19-scratch
+docker run -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.18.1-scratch
 ```
 If you don't need testing ant holesky use `-holesky-fork` node, for example:
 ```bash
-docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.19-holesky-fork
+docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.18.1-holesky-fork
 ```
 ### Updating hardhat version
 
