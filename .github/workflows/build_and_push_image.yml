@@ -3,7 +3,7 @@ name: build and push image
 on:
   push:
     tags:
-      - '*'
+      - "*"
 
 permissions:
   contents: read
@@ -29,19 +29,33 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push fork image
+      - name: Build and push mainnet fork image
         uses: docker/build-push-action@v6.1.0
         with:
           context: .
+          file: node-mainnet-fork.Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ghcr.io/lidofinance/hardhat-node:${{ github.ref_name }}
+          build-args: |
+            HH_CONFIG=hardhat.config.mainnet-fork.ts
 
-      - name: Build and push scratch image
+      - name: Build and push holesky fork image
         uses: docker/build-push-action@v6.1.0
         with:
           context: .
-          file: scratch.Dockerfile
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/lidofinance/hardhat-node:${{ github.ref_name }}-holesky-fork
+          build-args: |
+            HH_CONFIG=hardhat.config.holesky-fork.ts
+
+      - name: Build and push mainnet scratch image
+        uses: docker/build-push-action@v6.1.0
+        with:
+          context: .
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ghcr.io/lidofinance/hardhat-node:${{ github.ref_name }}-scratch
+          build-args: |
+            HH_CONFIG=hardhat.config.mainnet-scratch.ts
