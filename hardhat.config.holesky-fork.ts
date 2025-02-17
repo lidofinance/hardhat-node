@@ -13,7 +13,7 @@ const config: HardhatUserConfig = {
       accounts: {
         count: 10,
       },
-      chainId: 1700,
+      chainId: 17000,
       forking: {
         url: networks.rpcUrl("eth", "holesky"),
       },
