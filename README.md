@@ -27,7 +27,7 @@ docker run -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.19-scratc
 ```
 If you don't need testing ant holesky use `-holesky-fork` node, for example:
 ```bash
-docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.19-holasky-fork
+docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.19-holesky-fork
 ```
 ### Updating hardhat version
 
