@@ -1,7 +1,7 @@
 import env from "./env";
 
 export type ChainName = "eth" | "arb" | "opt";
-export type NetworkName = "mainnet" | "goerli" | "holesky";
+export type NetworkName = "mainnet" | "holesky";
 
 /**
  * Returns the RPC url for the given network name
