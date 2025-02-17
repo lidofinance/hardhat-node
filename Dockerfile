@@ -5,9 +5,10 @@
 # https://docs.docker.com/go/dockerfile-reference/
 
 ARG NODE_VERSION=lts
-ARG PNPM_VERSION=9.11.0
-
 FROM node:${NODE_VERSION}-alpine
+
+ARG PNPM_VERSION=9.11.0
+ARG HH_CONFIG="hardhat.config.mainnet-fork.ts"
 
 # Use production node environment by default.
 ENV NODE_ENV=production
@@ -29,6 +30,7 @@ RUN --mount=type=bind,source=package.json,target=package.json \
 
 # Copy the rest of the source files into the image.
 COPY . .
+COPY $HH_CONFIG hardhat.config.ts
 
 # Expose the port that the application listens on.
 EXPOSE 8545

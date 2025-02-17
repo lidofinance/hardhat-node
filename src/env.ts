@@ -30,10 +30,6 @@ function ALCHEMY_TOKEN() {
   return process.env["ALCHEMY_TOKEN"];
 }
 
-function ETHERSCAN_TOKEN() {
-  return process.env["ETHERSCAN_TOKEN"];
-}
-
 export default {
   ETH_RPC_URL,
   ARB_RPC_URL,
@@ -43,5 +39,4 @@ export default {
   LOCAL_ARB_RPC_URL,
   LOCAL_OPT_RPC_URL,
   ALCHEMY_TOKEN,
-  ETHERSCAN_TOKEN,
 };
