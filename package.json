@@ -5,7 +5,7 @@
   },
   "packageManager": "pnpm@9.15.4",
   "devDependencies": {
-    "prettier": "^3.4.2",
+    "prettier": "^3.5.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },
@@ -13,6 +13,6 @@
     "@nomicfoundation/hardhat-ethers": "^3.0.8",
     "dotenv": "^16.4.7",
     "ethers": "^6.13.5",
-    "hardhat": "^2.22.18"
+    "hardhat": "^2.22.19"
   }
 }
