@@ -58,3 +58,13 @@ jobs:
           tags: ghcr.io/lidofinance/hardhat-node:${{ github.ref_name }}-scratch
           build-args: |
             HH_CONFIG=hardhat.config.mainnet-scratch.ts
+
+      - name: Build and push mainnet shanghai image
+        uses: docker/build-push-action@v6.1.0
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/lidofinance/hardhat-node:${{ github.ref_name }}-shanghai
+          build-args: |
+            HH_CONFIG=hardhat.config.mainnet-fork-shanghai.ts
