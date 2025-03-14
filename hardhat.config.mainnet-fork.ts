@@ -9,11 +9,11 @@ const config: HardhatUserConfig = {
   solidity: "0.8.23",
   networks: {
     hardhat: {
+      ...networks.maybeChainIdConfig(1),
       initialBaseFeePerGas: 0,
       accounts: {
         count: 10,
       },
-      chainId: 1,
       forking: {
         url: networks.rpcUrl("eth", "mainnet"),
       },

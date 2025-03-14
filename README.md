@@ -29,6 +29,17 @@ If you don't need testing ant holesky use `-holesky-fork` node, for example:
 ```bash
 docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.18.1-holesky-fork
 ```
+
+### Forking fork chainId issue
+
+There might an issue when forking hardhat node with a hardhat node which causes an error like:
+
+```
+The response reported error `-32000`: `header not found`. (optional data: None). Request: {"jsonrpc":"2.0","method":"eth_getBalance","params":["0x61097ba76cd906d2ba4fd106e757f7eb455fc295","0x15062e6"],"id":275}
+```
+
+To fix this `chainId` must not be set in the forked node. To do so set `DONT_SENT_CHAIN_ID` env variable, e.g. `DONT_SENT_CHAIN_ID=1`.
+
 ### Updating hardhat version
 
 - set the new version in package.json

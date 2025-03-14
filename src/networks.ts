@@ -26,6 +26,13 @@ function rpcUrl(chainName: ChainName) {
   if (chainName === "opt") return env.OPT_RPC_URL();
 }
 
+function maybeChainIdConfig(chainId: number) {
+  if (env.DONT_SET_CHAIN_ID()) {
+    return { };
+  }
+  return { chainId };
+}
+
 function infuraUrl(chainName: ChainName, networkName: NetworkName) {
   const infuraToken = env.INFURA_TOKEN();
   const infuraNetworkDomain =
@@ -46,4 +53,5 @@ function alchemyUrl(chainName: ChainName, networkName: NetworkName) {
 
 export default {
   rpcUrl: url,
+  maybeChainIdConfig,
 };
