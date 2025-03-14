@@ -38,7 +38,7 @@ There might an issue when forking hardhat node with a hardhat node which causes 
 The response reported error `-32000`: `header not found`. (optional data: None). Request: {"jsonrpc":"2.0","method":"eth_getBalance","params":["0x61097ba76cd906d2ba4fd106e757f7eb455fc295","0x15062e6"],"id":275}
 ```
 
-To fix this `chainId` must not be set in the forked node. To do so set `DONT_SENT_CHAIN_ID` env variable, e.g. `DONT_SENT_CHAIN_ID=1`.
+To fix this `chainId` must not be set in the forked node. To do so set `DONT_SET_CHAIN_ID` env variable, e.g. `DONT_SET_CHAIN_ID=1`.
 
 ### Updating hardhat version
 
