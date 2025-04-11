@@ -29,6 +29,8 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # Mainnet
+
       - name: Build and push mainnet fork image
         uses: docker/build-push-action@v6.1.0
         with:
@@ -38,16 +40,6 @@ jobs:
           tags: ghcr.io/lidofinance/hardhat-node:${{ github.ref_name }}
           build-args: |
             HH_CONFIG=hardhat.config.mainnet-fork.ts
-
-      - name: Build and push hoodi fork image
-        uses: docker/build-push-action@v6.1.0
-        with:
-          context: .
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: ghcr.io/lidofinance/hardhat-node:${{ github.ref_name }}-hoodi-fork
-          build-args: |
-            HH_CONFIG=hardhat.config.hoodi-fork.ts
 
       - name: Build and push mainnet scratch image
         uses: docker/build-push-action@v6.1.0
@@ -59,12 +51,14 @@ jobs:
           build-args: |
             HH_CONFIG=hardhat.config.mainnet-scratch.ts
 
-      - name: Build and push mainnet shanghai image
+      # Hoodi
+
+      - name: Build and push hoodi fork image
         uses: docker/build-push-action@v6.1.0
         with:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/lidofinance/hardhat-node:${{ github.ref_name }}-shanghai
+          tags: ghcr.io/lidofinance/hardhat-node:${{ github.ref_name }}-hoodi-fork
           build-args: |
-            HH_CONFIG=hardhat.config.mainnet-fork-shanghai.ts
+            HH_CONFIG=hardhat.config.hoodi-fork.ts
