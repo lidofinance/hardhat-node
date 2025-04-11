@@ -34,6 +34,10 @@ function DONT_SET_CHAIN_ID() {
   return Boolean(process.env["DONT_SET_CHAIN_ID"]);
 }
 
+function HARDFORK() {
+  return process.env["HARDFORK"] || "cancun";
+}
+
 export default {
   ETH_RPC_URL,
   ARB_RPC_URL,
@@ -44,4 +48,5 @@ export default {
   LOCAL_OPT_RPC_URL,
   ALCHEMY_TOKEN,
   DONT_SET_CHAIN_ID,
+  HARDFORK,
 };
