@@ -9,25 +9,35 @@ To run the mainnet fork you have to set one of the following environment variabl
 - `ETH_RPC_URL` to use a custom provider
 
 ### Examples
+
 With Infura
+
 ```bash
-docker run -e INFURA_TOKEN=your_token -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.18.1
+docker run -e INFURA_TOKEN=your_token -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.23.0
 ```
+
 With Alchemy:
+
 ```bash
-docker  run -e ALCHEMY_TOKEN=your_token -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.18.1
+docker  run -e ALCHEMY_TOKEN=your_token -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.23.0
 ```
+
 With custom provider:
+
 ```bash
-docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.18.1
+docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.23.0
 ```
+
 If you don't need to fork mainnet, and you only want to work with the `-scratch` node:
+
 ```bash
-docker run -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.18.1-scratch
+docker run -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.23.0
 ```
-If you don't need testing ant holesky use `-holesky-fork` node, for example:
+
+If you don't need testing ant hoodi use `-hoodi-fork` node, for example:
+
 ```bash
-docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.18.1-holesky-fork
+docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.18.1-hoodi-fork
 ```
 
 ### Forking fork chainId issue

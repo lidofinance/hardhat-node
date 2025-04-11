@@ -7,7 +7,7 @@
 ARG NODE_VERSION=lts
 FROM node:${NODE_VERSION}-alpine
 
-ARG PNPM_VERSION=9.11.0
+ARG PNPM_VERSION=10.8.0
 ARG HH_CONFIG="hardhat.config.mainnet-fork.ts"
 
 # Use production node environment by default.

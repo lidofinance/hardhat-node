@@ -4,16 +4,15 @@ import "@nomicfoundation/hardhat-ethers";
 
 import networks from "./src/networks";
 
-
 const config: HardhatUserConfig = {
-  solidity: "0.8.23",
+  solidity: "0.8.25",
   networks: {
     hardhat: {
       ...networks.maybeChainIdConfig(1),
       hardfork: "shanghai",
       initialBaseFeePerGas: 0,
       accounts: {
-        count: 10,
+        count: 30,
       },
       forking: {
         url: networks.rpcUrl("eth", "mainnet"),
