@@ -39,15 +39,15 @@ jobs:
           build-args: |
             HH_CONFIG=hardhat.config.mainnet-fork.ts
 
-      - name: Build and push holesky fork image
+      - name: Build and push hoodi fork image
         uses: docker/build-push-action@v6.1.0
         with:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/lidofinance/hardhat-node:${{ github.ref_name }}-holesky-fork
+          tags: ghcr.io/lidofinance/hardhat-node:${{ github.ref_name }}-hoodi-fork
           build-args: |
-            HH_CONFIG=hardhat.config.holesky-fork.ts
+            HH_CONFIG=hardhat.config.hoodi-fork.ts
 
       - name: Build and push mainnet scratch image
         uses: docker/build-push-action@v6.1.0

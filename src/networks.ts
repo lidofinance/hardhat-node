@@ -1,7 +1,7 @@
 import env from "./env";
 
 export type ChainName = "eth" | "arb" | "opt";
-export type NetworkName = "mainnet" | "holesky";
+export type NetworkName = "mainnet" | "hoodi";
 
 /**
  * Returns the RPC url for the given network name
@@ -13,8 +13,7 @@ function url(chainName: ChainName, networkName: NetworkName): string {
     alchemyUrl(chainName, networkName);
   if (!url) {
     throw new Error(
-      "RPC node credential was not provided. Please, set one of " +
-        "RPC_URL, INFURA_TOKEN or ALCHEMY_TOKEN env variables",
+      "RPC node credential was not provided. Please, set one of RPC_URL, INFURA_TOKEN or ALCHEMY_TOKEN env variables"
     );
   }
   return url;
@@ -28,7 +27,7 @@ function rpcUrl(chainName: ChainName) {
 
 function maybeChainIdConfig(chainId: number) {
   if (env.DONT_SET_CHAIN_ID()) {
-    return { };
+    return {};
   }
   return { chainId };
 }
