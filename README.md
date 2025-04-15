@@ -2,11 +2,32 @@
 
 ### Run
 
-To run the mainnet fork you have to set one of the following environment variables:
+### Available Environment Variables
 
-- `INFURA_TOKEN` to use Infura as provider
-- `ALCHEMY_TOKEN` to use Alchemy as provider
-- `ETH_RPC_URL` to use a custom provider
+The following environment variables can be used to configure the hardhat node:
+
+- `INFURA_TOKEN` - Token for Infura provider
+- `ALCHEMY_TOKEN` - Token for Alchemy provider
+- `ETH_RPC_URL` - Custom Ethereum RPC URL
+- `DONT_SET_CHAIN_ID` - Set to any value to prevent setting chainId (useful when forking)
+- `HARDFORK` - Specify the hardfork to use (defaults to "cancun")
+
+### Available Node Types
+
+The following node types are available as different Docker image tags:
+
+- `:latest` or `:<version>` - Mainnet fork node
+- `:<version>-scratch` - Fresh node without forking
+- `:<version>-hoodi` - Hoodi network fork node
+
+### Node Configuration
+
+The Hardhat node comes with the following default configuration:
+
+- 30 test accounts
+- Initial base fee per gas set to 0
+- Mocha timeout set to 5 minutes
+- Solidity version 0.8.25
 
 ### Examples
 
@@ -31,13 +52,13 @@ docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/har
 If you don't need to fork mainnet, and you only want to work with the `-scratch` node:
 
 ```bash
-docker run -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.23.0
+docker run -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.23.0-scratch
 ```
 
-If you don't need testing ant hoodi use `-hoodi-fork` node, for example:
+If you want to fork hoodi use `-hoodi` node, for example:
 
 ```bash
-docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.22.18.1-hoodi-fork
+docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.23.0-hoodi
 ```
 
 ### Forking fork chainId issue
@@ -59,3 +80,23 @@ To fix this `chainId` must not be set in the forked node. To do so set `DONT_SET
 - merge the PR
 - create a new tag with the version `git tag -a <version> -m "Hardhat version <version>"`
 - push the tag `git push --tags`
+
+### Available Environment Variables
+
+The following environment variables can be used to configure the hardhat node:
+
+- `INFURA_TOKEN` - Token for Infura provider
+- `ALCHEMY_TOKEN` - Token for Alchemy provider
+- `ETH_RPC_URL` - Custom Ethereum RPC URL
+- `ARB_RPC_URL` - Custom Arbitrum RPC URL
+- `OPT_RPC_URL` - Custom Optimism RPC URL
+- `DONT_SET_CHAIN_ID` - Set to any value to prevent setting chainId (useful when forking)
+- `HARDFORK` - Specify the hardfork to use (defaults to "cancun")
+
+### Available Node Types
+
+The following node types are available as different Docker image tags:
+
+- `:latest` or `:<version>` - Mainnet fork node
+- `:<version>-scratch` - Fresh node without forking
+- `:<version>-hoodi-fork` - Hoodi network fork node
