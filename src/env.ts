@@ -35,7 +35,7 @@ function DONT_SET_CHAIN_ID() {
 }
 
 function HARDFORK() {
-  return process.env["HARDFORK"] || "cancun";
+  return process.env["HARDFORK"] || "prague";
 }
 
 export default {

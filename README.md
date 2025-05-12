@@ -10,7 +10,7 @@ The following environment variables can be used to configure the hardhat node:
 - `ALCHEMY_TOKEN` - Token for Alchemy provider
 - `ETH_RPC_URL` - Custom Ethereum RPC URL
 - `DONT_SET_CHAIN_ID` - Set to any value to prevent setting chainId (useful when forking)
-- `HARDFORK` - Specify the hardfork to use (defaults to "cancun")
+- `HARDFORK` - Specify the hardfork to use (defaults to "prague")
 
 ### Available Node Types
 
@@ -34,31 +34,31 @@ The Hardhat node comes with the following default configuration:
 With Infura
 
 ```bash
-docker run -e INFURA_TOKEN=your_token -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.23.0
+docker run -e INFURA_TOKEN=your_token -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.24.0
 ```
 
 With Alchemy:
 
 ```bash
-docker  run -e ALCHEMY_TOKEN=your_token -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.23.0
+docker  run -e ALCHEMY_TOKEN=your_token -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.24.0
 ```
 
 With custom provider:
 
 ```bash
-docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.23.0
+docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.24.0
 ```
 
 If you don't need to fork mainnet, and you only want to work with the `-scratch` node:
 
 ```bash
-docker run -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.23.0-scratch
+docker run -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.24.0-scratch
 ```
 
 If you want to fork hoodi use `-hoodi` node, for example:
 
 ```bash
-docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.23.0-hoodi
+docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.24.0-hoodi
 ```
 
 ### Forking fork chainId issue
