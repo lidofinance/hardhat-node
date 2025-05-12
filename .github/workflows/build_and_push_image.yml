@@ -41,7 +41,9 @@ jobs:
           build-args: |
             HH_CONFIG=hardhat.config.mainnet-fork.ts
 
-      - name: Build and push mainnet scratch image
+      # Scratch
+
+      - name: Build and push scratch image
         uses: docker/build-push-action@v6.1.0
         with:
           context: .
