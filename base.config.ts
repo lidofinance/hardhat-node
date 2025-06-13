@@ -7,7 +7,10 @@ const baseConfig: HardhatUserConfig = {
   networks: {
     hardhat: {
       initialBaseFeePerGas: 0,
-      accounts: { count: 30 },
+      accounts: {
+        count: 30,
+        accountsBalance: "100000000000000000000000",
+      },
     },
   },
 };
