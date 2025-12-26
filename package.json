@@ -3,16 +3,16 @@
   "scripts": {
     "start": "hardhat node"
   },
-  "packageManager": "pnpm@10.12.1",
+  "packageManager": "pnpm@10.26.2",
   "devDependencies": {
-    "prettier": "^3.6.2",
+    "prettier": "^3.7.4",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@nomicfoundation/hardhat-ethers": "^3.1.0",
-    "dotenv": "^17.2.0",
-    "ethers": "^6.15.0",
-    "hardhat": "^2.26.0"
+    "@nomicfoundation/hardhat-ethers": "^3.1.3",
+    "dotenv": "^17.2.3",
+    "ethers": "^6.16.0",
+    "hardhat": "^2.28.0"
   }
 }
