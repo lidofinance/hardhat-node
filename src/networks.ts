@@ -1,7 +1,7 @@
 import env from "./env";
 
 export type ChainName = "eth" | "arb" | "opt";
-export type NetworkName = "mainnet" | "hoodi";
+export type NetworkName = "mainnet" | "hoodi" | "sepolia";
 
 function getChainRpcUrl(chainName: ChainName) {
   if (chainName === "eth") return env.ETH_RPC_URL();
@@ -37,7 +37,7 @@ function rpcUrl(chainName: ChainName, networkName: NetworkName): string {
     getAlchemyUrl(chainName, networkName);
   if (!url) {
     throw new Error(
-      "RPC node credential was not provided. Please, set one of RPC_URL, INFURA_TOKEN or ALCHEMY_TOKEN env variables"
+      "RPC node credential was not provided. Please, set one of RPC_URL, INFURA_TOKEN or ALCHEMY_TOKEN env variables",
     );
   }
   return url;
