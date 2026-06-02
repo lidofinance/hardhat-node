@@ -64,3 +64,15 @@ jobs:
           tags: ghcr.io/lidofinance/hardhat-node:${{ github.ref_name }}-hoodi
           build-args: |
             HH_CONFIG=hardhat.config.hoodi-fork.ts
+
+      # Sepolia
+
+      - name: Build and push sepolia fork image
+        uses: docker/build-push-action@v6.1.0
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/lidofinance/hardhat-node:${{ github.ref_name }}-sepolia
+          build-args: |
+            HH_CONFIG=hardhat.config.sepolia-fork.ts

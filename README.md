@@ -19,6 +19,7 @@ The following node types are available as different Docker image tags:
 - `:latest` or `:<version>` - Mainnet fork node
 - `:<version>-scratch` - Fresh node without forking
 - `:<version>-hoodi` - Hoodi network fork node
+- `:<version>-sepolia` - Sepolia network fork node
 
 ### Node Configuration
 
@@ -60,6 +61,8 @@ If you want to fork hoodi use `-hoodi` node, for example:
 ```bash
 docker run -e ETH_RPC_URL=your_url -p 8545:8545 -it --rm ghcr.io/lidofinance/hardhat-node:2.24.0-hoodi
 ```
+
+Sepolia is also supported.
 
 ### Forking fork chainId issue
 
