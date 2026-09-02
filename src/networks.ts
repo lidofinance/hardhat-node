@@ -1,4 +1,4 @@
-import env from "./env";
+import env from "./env.js";
 
 export type ChainName = "eth" | "arb" | "opt";
 export type NetworkName = "mainnet" | "hoodi" | "sepolia";

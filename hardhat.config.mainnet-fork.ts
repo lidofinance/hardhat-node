@@ -1,12 +1,12 @@
 import "dotenv/config";
 
-import networks from "./src/networks";
+import networks from "./src/networks.js";
 
-import { createConfig } from "./base.config";
+import { createConfig } from "./base.config.js";
 
 export default createConfig({
   networks: {
-    hardhat: {
+    node: {
       ...networks.maybeChainIdConfig(1),
       ...networks.hardforkConfig(),
       forking: { url: networks.rpcUrl("eth", "mainnet") },

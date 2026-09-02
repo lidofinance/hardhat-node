@@ -27,7 +27,6 @@ The Hardhat node comes with the following default configuration:
 
 - 30 test accounts
 - Initial base fee per gas set to 0
-- Mocha timeout set to 5 minutes
 - Solidity version 0.8.25
 
 ### Examples
