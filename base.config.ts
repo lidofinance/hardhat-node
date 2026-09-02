@@ -1,11 +1,14 @@
-import { HardhatUserConfig } from "hardhat/config";
+import type {
+  EdrNetworkConfigOverride,
+  HardhatUserConfig,
+} from "hardhat/types/config";
 
-const baseConfig: HardhatUserConfig = {
+const baseConfig = {
   solidity: "0.8.25",
-  mocha: { timeout: 5 * 60 * 1000 },
-  keystores: { path: "keystores" },
   networks: {
-    hardhat: {
+    node: {
+      type: "edr-simulated",
+      chainType: "l1",
       initialBaseFeePerGas: 0,
       accounts: {
         count: 30,
@@ -13,19 +16,23 @@ const baseConfig: HardhatUserConfig = {
       },
     },
   },
+} satisfies HardhatUserConfig;
+
+type ConfigOverrides = Omit<Partial<HardhatUserConfig>, "networks"> & {
+  networks?: { node?: EdrNetworkConfigOverride };
 };
 
 export const createConfig = (
-  overrides: Partial<HardhatUserConfig> = {}
+  overrides: ConfigOverrides = {},
 ): HardhatUserConfig => ({
   ...baseConfig,
   ...overrides,
   networks: {
     ...baseConfig.networks,
     ...overrides.networks,
-    hardhat: {
-      ...baseConfig.networks?.hardhat,
-      ...overrides.networks?.hardhat,
+    node: {
+      ...baseConfig.networks.node,
+      ...overrides.networks?.node,
     },
   },
 });
