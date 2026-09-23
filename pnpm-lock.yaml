@@ -12,15 +12,15 @@ importers:
         specifier: ^17.4.2
         version: 17.4.2
       hardhat:
-        specifier: ^3.15.0
-        version: 3.15.0
+        specifier: ^3.16.0
+        version: 3.16.0
     devDependencies:
       '@types/node':
-        specifier: ^26.4.1
-        version: 26.4.1
+        specifier: ^26.6.1
+        version: 26.6.1
       prettier:
-        specifier: ^3.9.6
-        version: 3.9.6
+        specifier: ^3.9.7
+        version: 3.9.7
       typescript:
         specifier: ^7.0.2
         version: 7.0.2
@@ -316,8 +316,8 @@ packages:
   '@streamparser/json@0.0.22':
     resolution: {integrity: sha512-b6gTSBjJ8G8SuO3Gbbj+zXbVx8NSs1EbpbMKpzGLWMdkR+98McH9bEjSz3+0mPJf68c5nxa3CrJHp5EQNXM6zQ==}
 
-  '@types/node@26.4.1':
-    resolution: {integrity: sha512-k97ENvZWtvA6yqz5/FS6a7duDgOPEeOQOc2iKS/nY6mX6qJUKtLnWzQS+Xj6tXweyj6ZcTAK2Qecetnvi9nCLA==}
+  '@types/node@26.6.1':
+    resolution: {integrity: sha512-VqGJBMCtdhqkBUCcBLvywI0NJ+KLuVzgNnlBUNFOQjqVxzo2lxLUNg1DSey8+u2u6ktswSAxg+s68QLzWHNOuA==}
 
   '@typescript/typescript-aix-ppc64@7.0.2':
     resolution: {integrity: sha512-MTKKkWB7p/0E9xi1d1tHtZ5PiLkGEMIq88pK2CubZjOsLtYTLqhgIgi6zepFa+9GHZ6h05NMCkQxGKiPXMxXtQ==}
@@ -439,8 +439,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  adm-zip@0.6.0:
-    resolution: {integrity: sha512-XleryMhbuksdKtofnWZ9Sk+4CUTbms4Mb/EU32SZwToAyZ5RgVos/ki8n+yr0LWHOGKuakbXTuuYNHLQjhddgg==}
+  adm-zip@0.6.1:
+    resolution: {integrity: sha512-Xwrja8nx9e5o2N1my4DsKCeKpdrnACyr1wtbPxBDgGzKzKyE9kRtBFA8mWldI+RVlD7CBZNWY/wQ2+ydwOR6kQ==}
     engines: {node: '>=14.0'}
 
   ansi-colors@4.1.3:
@@ -475,8 +475,8 @@ packages:
   ethereum-cryptography@2.2.1:
     resolution: {integrity: sha512-r/W8lkHSiTLxUxW8Rf3u4HGB0xQweG2RyETjywylKZSzLWoWAijRz8WCuOtJ6wah+avllXBqZuk29HCCvhEIRg==}
 
-  fast-equals@6.0.2:
-    resolution: {integrity: sha512-sAjhj9ZhOxYCGiNMnZLaucOqf5ZeFnHNoKoAZiD9thhJ0N8RP85qJK759/97C/3L7NzzmGVB5uiX9AUpySZmUQ==}
+  fast-equals@6.0.3:
+    resolution: {integrity: sha512-IECu4C0fFZFoUC2cA2rDaNUuVIfWIZMwh3tY+ng924vOuD9OaUFFrcIrVwCKbV7TJDkGmrHfhwZ7R0AnHfVhyw==}
     engines: {node: '>=6.0.0'}
 
   fsevents@2.3.3:
@@ -484,8 +484,8 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  hardhat@3.15.0:
-    resolution: {integrity: sha512-41S+2ZCRRKfIcHLnfrpvGdBCaUf468U+YYqAeBSFZFivB7cY3qqDtOxOiLuLaJ7dw75yA/K3VHKZ2QF8nAd+iA==}
+  hardhat@3.16.0:
+    resolution: {integrity: sha512-LWFFR3rYl8AIhwpYVjK2L5y0Z0CqdQFQ8AZWe8gqf1t7KGH+E/EguoIX7rcB4KfyKoWK6ooj+7Jgba4vlQ1feQ==}
     hasBin: true
 
   is-safe-filename@0.1.1:
@@ -502,12 +502,12 @@ packages:
   micro-packed@0.7.3:
     resolution: {integrity: sha512-2Milxs+WNC00TRlem41oRswvw31146GiSaoCT7s3Xi2gMUglW5QBeqlQaZeHr5tJx9nm3i57LNXPqxOOaWtTYg==}
 
-  p-map@7.0.7:
-    resolution: {integrity: sha512-VaWRu2i4FJNRtiRWCuuQRgfQ1B7a6+gMSrO+3j0EQi/k0ULfS9kosRxGoiqwzIjZTDI02tGfk5mXXltLg6QtfQ==}
+  p-map@7.0.8:
+    resolution: {integrity: sha512-MitaVsCuCFIvOLLPIU7NnfrZvS9H9h7kwMUkDo+T2pEISaJD48IV9S8iIdXB7PsvvdxyYcsSTTrr90XKsbulNw==}
     engines: {node: '>=18'}
 
-  prettier@3.9.6:
-    resolution: {integrity: sha512-OpN0zzVdiaiAhxpuuj5efpIS4sY9j7bY6uR5mnj5yPzGkdkjNKSJeUThPb60Jw29QuAZgA4o+/iB49kFiaBX6g==}
+  prettier@3.9.7:
+    resolution: {integrity: sha512-T3mF5P7HFzZVLDQuCUNtJj6WK1pcpLMweMNUVwGb01bLNkH9AkKxtZvmInw8K6bnn2O3d6/5RHl6zSHiBAD0Og==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -541,11 +541,11 @@ packages:
     engines: {node: '>=16.20.0'}
     hasBin: true
 
-  undici-types@8.3.0:
-    resolution: {integrity: sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ==}
+  undici-types@8.9.0:
+    resolution: {integrity: sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg==}
 
-  undici@6.28.0:
-    resolution: {integrity: sha512-LIY910g9TI13YS95lrMFrs8Rm/u/irgHeTWoKCoteeJ04CUJ92eEfj0rVn+7VKMPBpUPiUoBKfhNyLI23EE/KA==}
+  undici@6.28.1:
+    resolution: {integrity: sha512-zWpdTVD54H48CIybL0rWQ3ukpb9d23wM7eH5RtfdmeP70cWHNjtfo7P4vZX+5CoDcO53J4Pu5uXp7lNfjc6DRA==}
     engines: {node: '>=18.17'}
 
   ws@8.21.3:
@@ -695,10 +695,10 @@ snapshots:
       '@streamparser/json-node': 0.0.22
       env-paths: 4.0.0
       ethereum-cryptography: 2.2.1
-      fast-equals: 6.0.2
+      fast-equals: 6.0.3
       json-stream-stringify: 3.1.7
       rfdc: 1.4.1
-      undici: 6.28.0
+      undici: 6.28.1
 
   '@nomicfoundation/hardhat-vendored@3.0.4': {}
 
@@ -762,9 +762,9 @@ snapshots:
 
   '@streamparser/json@0.0.22': {}
 
-  '@types/node@26.4.1':
+  '@types/node@26.6.1':
     dependencies:
-      undici-types: 8.3.0
+      undici-types: 8.9.0
 
   '@typescript/typescript-aix-ppc64@7.0.2':
     optional: true
@@ -826,7 +826,7 @@ snapshots:
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
 
-  adm-zip@0.6.0: {}
+  adm-zip@0.6.1: {}
 
   ansi-colors@4.1.3: {}
 
@@ -883,12 +883,12 @@ snapshots:
       '@scure/bip32': 1.4.0
       '@scure/bip39': 1.3.0
 
-  fast-equals@6.0.2: {}
+  fast-equals@6.0.3: {}
 
   fsevents@2.3.3:
     optional: true
 
-  hardhat@3.15.0:
+  hardhat@3.16.0:
     dependencies:
       '@nomicfoundation/edr': 0.19.0
       '@nomicfoundation/hardhat-errors': 3.0.21
@@ -897,12 +897,12 @@ snapshots:
       '@nomicfoundation/hardhat-zod-utils': 3.0.6(zod@3.25.76)
       '@nomicfoundation/solidity-analyzer': 0.1.2
       '@sentry/core': 9.47.1
-      adm-zip: 0.6.0
+      adm-zip: 0.6.1
       chokidar: 5.0.0
       enquirer: 2.4.1
       ethereum-cryptography: 2.2.1
       micro-eth-signer: 0.14.0
-      p-map: 7.0.7
+      p-map: 7.0.8
       resolve.exports: 2.0.3
       semver: 7.8.5
       tsx: 4.23.13
@@ -926,9 +926,9 @@ snapshots:
     dependencies:
       '@scure/base': 1.2.6
 
-  p-map@7.0.7: {}
+  p-map@7.0.8: {}
 
-  prettier@3.9.6: {}
+  prettier@3.9.7: {}
 
   readdirp@5.1.1: {}
 
@@ -971,9 +971,9 @@ snapshots:
       '@typescript/typescript-win32-arm64': 7.0.2
       '@typescript/typescript-win32-x64': 7.0.2
 
-  undici-types@8.3.0: {}
+  undici-types@8.9.0: {}
 
-  undici@6.28.0: {}
+  undici@6.28.1: {}
 
   ws@8.21.3: {}
 
