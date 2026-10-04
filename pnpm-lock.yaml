@@ -12,8 +12,8 @@ importers:
         specifier: ^17.4.2
         version: 17.4.2
       hardhat:
-        specifier: ^3.15.0
-        version: 3.15.0
+        specifier: ^3.16.0
+        version: 3.16.0
     devDependencies:
       '@types/node':
         specifier: ^26.4.1
@@ -215,28 +215,24 @@ packages:
     engines: {node: '>= 22'}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@nomicfoundation/edr-linux-arm64-musl@0.19.0':
     resolution: {integrity: sha512-mlkpVUolkSpMIriZyiJeTbgx/m4Ngm9lQtah2BG92H+dgtwMIMze6Q6OQfZG6oi6wMrhDgu8WEyAy3XgIwlcRg==}
     engines: {node: '>= 22'}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@nomicfoundation/edr-linux-x64-gnu@0.19.0':
     resolution: {integrity: sha512-d0Z+WVbX5mm6s9ozc5TXrCRjQykdN81tGI+eaM4hQcD/S5VSY9rwKuCXyLJ/GkgeI5S8HEHsyVdXEsDJznPyhA==}
     engines: {node: '>= 22'}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@nomicfoundation/edr-linux-x64-musl@0.19.0':
     resolution: {integrity: sha512-UIrlNqYj9lbUXpBy++WwHeC0xZqyFw9TXy06/8+0PLffI7Si4kiTKfXqdITGQhP6Vf/JuJ8y+jos8oy6bL8jFQ==}
     engines: {node: '>= 22'}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@nomicfoundation/edr-win32-x64-msvc@0.19.0':
     resolution: {integrity: sha512-pIyEJBiS8l09Yndz+aE/JmkD39FCqtyiRO+wlx6tX426o4290acRfJ0r7GwTBmqqZD5G4pLOOB0uLIMRyDrY+g==}
@@ -484,8 +480,8 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  hardhat@3.15.0:
-    resolution: {integrity: sha512-41S+2ZCRRKfIcHLnfrpvGdBCaUf468U+YYqAeBSFZFivB7cY3qqDtOxOiLuLaJ7dw75yA/K3VHKZ2QF8nAd+iA==}
+  hardhat@3.16.0:
+    resolution: {integrity: sha512-LWFFR3rYl8AIhwpYVjK2L5y0Z0CqdQFQ8AZWe8gqf1t7KGH+E/EguoIX7rcB4KfyKoWK6ooj+7Jgba4vlQ1feQ==}
     hasBin: true
 
   is-safe-filename@0.1.1:
@@ -888,7 +884,7 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  hardhat@3.15.0:
+  hardhat@3.16.0:
     dependencies:
       '@nomicfoundation/edr': 0.19.0
       '@nomicfoundation/hardhat-errors': 3.0.21
