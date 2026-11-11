@@ -12,6 +12,6 @@
   },
   "dependencies": {
     "dotenv": "^18.0.5",
-    "hardhat": "^3.19.0"
+    "hardhat": "^3.20.0"
   }
 }
